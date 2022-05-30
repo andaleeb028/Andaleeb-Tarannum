@@ -9,4 +9,6 @@ You can edit the image path and try using your own image it will give you fantas
 Also this code can be used to to construct a feature in digital camera which will auto-detect and suggest to the photographer whether the picture is clicked in daytime or night time.
 
 You can only implement this feature for cases which are directly distinguishable to the eyes(and not fuzzy scenarios such as dawn,dusk and sunrise,overcast skies which might 
-require more complex  aperture adjustments on the camera).
+require more complex  aperture adjustments on the camera.
+
+
