@@ -11,4 +11,4 @@ Also this code can be used to to construct a feature in digital camera which wil
 You can only implement this feature for cases which are directly distinguishable to the eyes(and not fuzzy scenarios such as dawn,dusk and sunrise,overcast skies which might 
 require more complex  aperture adjustments on the camera.
 
-
+You can find the full solution in ComputerVision.ipynb with its respective steps and instruction.
