@@ -1,0 +1,237 @@
+1. What is a dynamically typed language?
+Before we understand a dynamically typed language, we should learn about what typing is. Typing refers to type-checking in programming languages. In a strongly-typed language, such as Python, "1" + 2 will result in a type error since these languages don't allow for "type-coercion" (implicit conversion of data types). On the other hand, a weakly-typed language, such as Javascript, will simply output "12" as result.
+
+Type-checking can be done at two stages -
+
+Static - Data Types are checked before execution.
+Dynamic - Data Types are checked during execution.
+Python is an interpreted language, executes each statement line by line and thus type-checking is done on the fly, during execution. Hence, Python is a Dynamically Typed Language.
+
+
+2. What is an Interpreted language?
+An Interpreted language executes its statements line by line. Languages such as Python, Javascript, R, PHP, and Ruby are prime examples of Interpreted languages. Programs written in an interpreted language runs directly from the source code, with no intermediary compilation step.
+
+3. What is Scope in Python?
+Every object in Python functions within a scope. A scope is a block of code where an object in Python remains relevant. Namespaces uniquely identify all the objects inside a program. However, these namespaces also have a scope defined for them where you could use their objects without any prefix. A few examples of scope created during code execution in Python are as follows:
+
+A local scope refers to the local objects available in the current function.
+A global scope refers to the objects available throughout the code execution since their inception.
+A module-level scope refers to the global objects of the current module accessible in the program.
+An outermost scope refers to all the built-in names callable in the program. The objects in this scope are searched last to find the name referenced.
+Note: Local scope objects can be synced with global scope objects using keywords such as global.
+
+4. What are lists and tuples? What is the key difference between the two?
+
+Lists and Tuples are both sequence data types that can store a collection of objects in Python. The objects stored in both sequences can have different data types. Lists are represented with square brackets ['sara', 6, 0.19], while tuples are represented with parantheses ('ansh', 5, 0.97).
+But what is the real difference between the two? The key difference between the two is that while lists are mutable, tuples on the other hand are immutable objects. This means that lists can be modified, appended or sliced on the go but tuples remain constant and cannot be modified in any manner. You can run the following example on Python IDLE to confirm the difference:
+
+my_tuple = ('sara', 6, 5, 0.97)
+my_list = ['sara', 6, 5, 0.97]
+print(my_tuple[0])     # output => 'sara'
+print(my_list[0])     # output => 'sara'
+my_tuple[0] = 'ansh'    # modifying tuple => throws an error
+my_list[0] = 'ansh'    # modifying list => list modified
+print(my_tuple[0])     # output => 'sara'
+print(my_list[0])     # output => 'ansh'
+
+
+5. What is pass in Python?
+
+
+The pass keyword represents a null operation in Python. It is generally used for the purpose of filling up empty blocks of code which may execute during runtime but has yet to be written. Without the pass statement in the following code, we may run into some errors during code execution.
+
+def myEmptyFunc():
+   # do nothing
+   pass
+myEmptyFunc()    # nothing happens
+## Without the pass keyword
+# File "<stdin>", line 3
+# IndentationError: expected an indented block
+
+
+6.  What are global, protected and private attributes in Python?
+Global variables are public variables that are defined in the global scope. To use the variable in the global scope inside a function, we use the global keyword.
+Protected attributes are attributes defined with an underscore prefixed to their identifier eg. _sara. They can still be accessed and modified from outside the class they are defined in but a responsible developer should refrain from doing so.
+Private attributes are attributes with double underscore prefixed to their identifier eg. __ansh. They cannot be accessed or modified from the outside directly and will result in an AttributeError if such an attempt is made.
+
+
+7. What is the use of self in Python?
+Self is used to represent the instance of the class. With this keyword, you can access the attributes and methods of the class in python. It binds the attributes with the given arguments. self is used in different places and often thought to be a keyword. But unlike in C++, self is not a keyword in Python.
+
+8. What is __init__?
+__init__ is a contructor method in Python and is automatically called to allocate memory when a new object/instance is created. All classes have a __init__ method associated with them. It helps in distinguishing methods and attributes of a class from local variables.
+
+# class definition
+class Student:
+   def __init__(self, fname, lname, age, section):
+       self.firstname = fname
+       self.lastname = lname
+       self.age = age
+       self.section = section
+# creating a new object
+stu1 = Student("Sara", "Ansh", 22, "A2")
+
+
+9. What is break, continue and pass in Python?
+Break	:
+The break statement terminates the loop immediately and the control flows to the statement after the body of the loop.
+Continue	:
+The continue statement terminates the current iteration of the statement, skips the rest of the code in the current iteration and the control flows to the next iteration of the loop.
+Pass	:
+As explained above, the pass keyword in Python is generally used to fill up empty blocks and is similar to an empty statement represented by a semi-colon in languages such as Java, C++, Javascript, etc.
+pat = [1, 3, 2, 1, 2, 3, 1, 0, 1, 3]
+for p in pat:
+   pass
+   if (p == 0):
+       current = p
+       break
+   elif (p % 2 == 0):
+       continue
+   print(p)    # output => 1 3 1 3 1
+print(current)    # output => 0
+
+
+10. What is slicing in Python?
+As the name suggests, ‘slicing’ is taking parts of.
+Syntax for slicing is [start : stop : step]
+start is the starting index from where to slice a list or tuple
+stop is the ending index or where to sop.
+step is the number of steps to jump.
+Default value for start is 0, stop is number of items, step is 1.
+Slicing can be done on strings, arrays, lists, and tuples.
+numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+print(numbers[1 : : 2])  #output : [2, 4, 6, 8, 10]
+
+
+11. What is pep 8?
+Ans: PEP stands for Python Enhancement Proposal. It is a set of rules that specify how to format Python code for maximum readability.
+
+
+12.What are the common built-in data types in Python?
+
+Ans: The common built in data types in python are-
+
+Numbers– They include integers, floating point numbers, and complex numbers. eg. 1, 7.9,3+4i
+
+List– An ordered sequence of items is called a list. The elements of a list may belong to different data types. Eg. [5,’market’,2.4]
+
+Tuple– It is also an ordered sequence of elements. Unlike lists , tuples are immutable, which means they can’t be changed. Eg. (3,’tool’,1)
+
+String– A sequence of characters is called a string. They are declared within single or double quotes. Eg. “Sana”, ‘She is going to the market’, etc.
+
+Set– Sets are a collection of unique items that are not in order. Eg. {7,6,8}
+
+Dictionary– A dictionary stores values in key and value pairs where each value can be accessed through its key. The order of items is not important. Eg. {1:’apple’,2:’mango}
+
+Boolean– There are 2 boolean values- True and False.
+
+
+13. What are Keywords in Python?
+
+Ans: Keywords in python are reserved words that have special meaning.They are generally used to define type of variables. Keywords cannot be used for variable or function names. There are following 33 keywords in python-
+
+And
+Or
+Not
+If
+Elif
+Else
+For
+While
+Break
+ As
+Def
+Lambda
+Pass
+Return
+True
+False
+Try
+With
+Assert
+Class
+Continue
+Del
+Except
+Finally
+From
+Global
+Import
+In
+Is
+None
+Nonlocal
+Raise
+Yield
+
+
+14. Write a Python program to construct the following pattern, using a nested loop number. Go to the editor
+Expected Output:
+
+1
+22
+333
+4444
+55555
+666666
+7777777
+88888888
+999999999
+
+15. Write a Python program to create the multiplication table (from 1 to 10) of a number. Go to the editor
+Expected Output:
+
+Input a number: 6                                                       
+6 x 1 = 6                                                               
+6 x 2 = 12                                                              
+6 x 3 = 18                                                              
+6 x 4 = 24                                                              
+6 x 5 = 30                                                              
+6 x 6 = 36                                                              
+6 x 7 = 42                                                              
+6 x 8 = 48                                                              
+6 x 9 = 54                                                              
+6 x 10 = 60 
+
+
+16. Write a Python program to get next day of a given date. Go to the editor
+Expected Output:
+
+Input a year: 2016                                                      
+Input a month [1-12]: 08                                                
+Input a day [1-31]: 23                                                  
+The next date is [yyyy-mm-dd] 2016-8-24  
+
+
+17.  Write a Python program to display the sign of the Chinese Zodiac for given year in which you were born. Go to the editor
+Expected Output:
+
+Input your birth year: 1973                                             
+Your Zodiac sign : Ox
+
+
+18. Write a program to check whether a person is eligible for voting or not. (accept age from user)
+Hide Answer
+Ans. 
+age=int(input("Enter your age"))
+if age >=18:
+   print("Eligible for voting")
+else:
+   print("not eligible for voting")
+   
+   
+19. How do I modify a string in python? JUNIOR
+You can’t because strings are immutable in python. In most situations, you should simply construct a new string from the various parts you want to assemble it from. Work with them as lists; turn them into strings only when needed.
+
+>>> s = list("Hello zorld")
+>>> s
+['H', 'e', 'l', 'l', 'o', ' ', 'z', 'o', 'r', 'l', 'd']
+>>> s[6] = 'W'
+>>> s
+['H', 'e', 'l', 'l', 'o', ' ', 'W', 'o', 'r', 'l', 'd']
+>>> "".join(s)
+'Hello World'
+
+
+20. What is Negative Index in Python? JUNIOR
+Negative numbers mean that you count from the right instead of the left. So, list[-1] refers to the last element, list[-2] is the second-last, and so on.
